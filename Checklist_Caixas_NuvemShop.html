@@ -1,0 +1,387 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Caixas Júpiter</title><style>
+:root{--bg:#fbfaf8;--card:#fff;--ink:#1f2421;--dim:#6b726d;--line:#e6e3dd;--ac:#1f4e3d;--ok:#eef6f1}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#16181a;--card:#1e2124;--ink:#e9e7e3;--dim:#9aa09b;--line:#2f3336;--ac:#5fbf93;--ok:#1c2b24}}
+:root[data-theme=dark]{--bg:#16181a;--card:#1e2124;--ink:#e9e7e3;--dim:#9aa09b;--line:#2f3336;--ac:#5fbf93;--ok:#1c2b24}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;padding:24px 16px 60px}
+.wrap{max-width:900px;margin:0 auto}
+h1{font-size:1.5rem;margin:0 0 4px} .sub{color:var(--dim);margin:0 0 20px;font-size:.92rem}
+.bar{position:sticky;top:0;background:var(--bg);padding:10px 0;border-bottom:1px solid var(--line);margin-bottom:12px;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+input[type=search]{flex:1;min-width:180px;padding:9px 12px;border:1px solid var(--line);border-radius:8px;background:var(--card);color:var(--ink);font-size:15px}
+.prog{font-variant-numeric:tabular-nums;color:var(--dim);font-size:.9rem}
+ul{list-style:none;margin:0;padding:0}
+.item{background:var(--card);border:1px solid var(--line);border-radius:10px;margin-bottom:8px}
+.item label{display:flex;gap:12px;align-items:flex-start;padding:12px 14px;cursor:pointer}
+.item input{display:none}
+.num{color:var(--dim);font-variant-numeric:tabular-nums;font-size:.85rem;padding-top:2px;min-width:22px}
+.txt{display:flex;flex-direction:column;gap:3px;min-width:0}
+.txt b{font-weight:600;line-height:1.35}
+.meta{color:var(--dim);font-size:.82rem}
+code{font-size:.78rem;color:var(--dim);word-break:break-all;background:transparent}
+.item:has(input:checked){background:var(--ok);border-color:var(--ac)}
+.item:has(input:checked) .txt b{text-decoration:line-through;opacity:.6}
+.item:has(input:checked) .num::after{content:" ✓";color:var(--ac)}
+.hide{display:none}
+h2{font-size:1rem;margin:32px 0 8px}
+.falta li{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px 14px;margin-bottom:6px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+</style></head><body><div class="wrap">
+<h1>Caixas Para Empresas — upload na NuvemShop</h1>
+<p class="sub">Os arquivos estão em <b>Jupiter/Produtos/Caixas Para Empresas</b>, com o nome exato do produto. Busque o produto no painel, arraste a imagem e salve.</p>
+<div class="bar"><input type="search" id="q" placeholder="Filtrar por nome, SKU ou EAN…"><span class="prog" id="p"></span></div>
+<ul id="lista"><li class="item" data-b="amendoim torrado unisnacks salgado 250x15g caixa com 250 unidades 31698 7898957478637">
+<input type="checkbox" id="c1"><label for="c1">
+<span class="num">01</span>
+<span class="txt"><b>Amendoim Torrado Unisnacks Salgado 250x15g Caixa com 250 unidades</b>
+<span class="meta">SKU 31698 · EAN 7898957478637</span>
+<code>Amendoim Torrado Unisnacks Salgado 250x15g Caixa com 250 unidades.jpg</code></span></label></li><li class="item" data-b="bisc. aerolitos unisnacks banana c/ mel s/açúcar s/glúten s/lactose 100x15g caixa com 100 unidades 32296 7898957478446">
+<input type="checkbox" id="c2"><label for="c2">
+<span class="num">02</span>
+<span class="txt"><b>Bisc. Aerolitos Unisnacks Banana c/ Mel S/Açúcar S/Glúten S/Lactose 100x15g Caixa com 100 unidades</b>
+<span class="meta">SKU 32296 · EAN 7898957478446</span>
+<code>Biscoito Aerolitos Unisnacks Banana com Mel Sem Açúcar Sem Glúten Sem Lactose 100x15g Caixa com 100 unidades.jpg</code></span></label></li><li class="item" data-b="bisc. aerolitos unisnacks canela s/açúcar s/glúten s/lactose vegano 100x15g caixa com 100 unidades 701 7898957478330">
+<input type="checkbox" id="c3"><label for="c3">
+<span class="num">03</span>
+<span class="txt"><b>Bisc. Aerolitos Unisnacks Canela S/Açúcar S/Glúten S/Lactose Vegano 100x15g Caixa com 100 unidades</b>
+<span class="meta">SKU 701 · EAN 7898957478330</span>
+<code>Biscoito Aerolitos Unisnacks Canela Sem Açúcar Sem Glúten Sem Lactose Vegano 100x15g Caixa com 100 unidades.jpg</code></span></label></li><li class="item" data-b="bisc. aerolitos unisnacks coco com açúcar s/glúten 100x15g caixa com 100 unidades 703 7898957478316">
+<input type="checkbox" id="c4"><label for="c4">
+<span class="num">04</span>
+<span class="txt"><b>Bisc. Aerolitos Unisnacks Coco com Açúcar S/Glúten 100x15g Caixa com 100 unidades</b>
+<span class="meta">SKU 703 · EAN 7898957478316</span>
+<code>Biscoito Aerolitos Unisnacks Coco com Açúcar Sem Glúten 100x15g Caixa com 100 unidades.jpg</code></span></label></li><li class="item" data-b="bisc. aerolitos unisnacks laranja c/ cenoura s/açúcar s/glúten s/lactose vegano 100x15g caixa com 100 unidades 32297 7898957478439">
+<input type="checkbox" id="c5"><label for="c5">
+<span class="num">05</span>
+<span class="txt"><b>Bisc. Aerolitos Unisnacks Laranja c/ Cenoura S/Açúcar S/Glúten S/Lactose Vegano 100x15g Caixa com 100 unidades</b>
+<span class="meta">SKU 32297 · EAN 7898957478439</span>
+<code>Biscoito Aerolitos Unisnacks Laranja com Cenoura Sem Açúcar Sem Glúten Sem Lactose Vegano 100x15g Caixa com 100 uni.jpg</code></span></label></li><li class="item" data-b="biscoito amanteigado unisnacks sabor chocolate 250x8,6g caixa com 250 unidades 32459 7908716300236">
+<input type="checkbox" id="c6"><label for="c6">
+<span class="num">06</span>
+<span class="txt"><b>Biscoito Amanteigado Unisnacks Sabor Chocolate 250x8,6g Caixa com 250 unidades</b>
+<span class="meta">SKU 32459 · EAN 7908716300236</span>
+<code>Biscoito Amanteigado Unisnacks Sabor Chocolate 250x8,6g Caixa com 250 unidades.jpg</code></span></label></li><li class="item" data-b="biscoito amanteigado unisnacks sabor leite 250x8,6g caixa com 250 unidades 32457 7908716300229">
+<input type="checkbox" id="c7"><label for="c7">
+<span class="num">07</span>
+<span class="txt"><b>Biscoito Amanteigado Unisnacks Sabor Leite 250x8,6g Caixa com 250 unidades</b>
+<span class="meta">SKU 32457 · EAN 7908716300229</span>
+<code>Biscoito Amanteigado Unisnacks Sabor Leite 250x8,6g Caixa com 250 unidades.jpg</code></span></label></li><li class="item" data-b="bisc. de polvilho unisnacks balões de bacon s/ glúten 70x12g caixa com 70 unidades 32324 7908716300151">
+<input type="checkbox" id="c8"><label for="c8">
+<span class="num">08</span>
+<span class="txt"><b>Bisc. de Polvilho Unisnacks Balões de Bacon S/ Glúten 70x12g Caixa com 70 unidades</b>
+<span class="meta">SKU 32324 · EAN 7908716300151</span>
+<code>Biscoito de Polvilho Unisnacks Balões de Bacon Sem Glúten 70x12g Caixa com 70 unidades.jpg</code></span></label></li><li class="item" data-b="bisc. de polvilho unisnacks balões de cebola e salsa s/ glúten 70x12g caixa com 70 unidades 32322 7908716300144">
+<input type="checkbox" id="c9"><label for="c9">
+<span class="num">09</span>
+<span class="txt"><b>Bisc. de Polvilho Unisnacks Balões de Cebola e Salsa S/ Glúten 70x12g Caixa com 70 unidades</b>
+<span class="meta">SKU 32322 · EAN 7908716300144</span>
+<code>Biscoito de Polvilho Unisnacks Balões de Cebola e Salsa Sem Glúten 70x12g Caixa com 70 unidades.jpg</code></span></label></li><li class="item" data-b="bisc. de polvilho unisnacks balões de queijo parmesão s/ glúten 70x12g caixa com 70 unidades 31864 7898957478125">
+<input type="checkbox" id="c10"><label for="c10">
+<span class="num">10</span>
+<span class="txt"><b>Bisc. de Polvilho Unisnacks Balões de Queijo Parmesão S/ Glúten 70x12g Caixa com 70 unidades</b>
+<span class="meta">SKU 31864 · EAN 7898957478125</span>
+<code>Biscoito de Polvilho Unisnacks Balões de Queijo Parmesão Sem Glúten 70x12g Caixa com 70 unidades.jpg</code></span></label></li><li class="item" data-b="bisc. de polvilho unisnacks balões doce s/ glúten 70x12g caixa com 70 unidades 31865 7898957478644">
+<input type="checkbox" id="c11"><label for="c11">
+<span class="num">11</span>
+<span class="txt"><b>Bisc. de Polvilho Unisnacks Balões Doce S/ Glúten 70x12g Caixa com 70 unidades</b>
+<span class="meta">SKU 31865 · EAN 7898957478644</span>
+<code>Biscoito de Polvilho Unisnacks Balões Doce Sem Glúten 70x12g Caixa com 70 unidades.jpg</code></span></label></li><li class="item" data-b="bisc. de polvilho unisnacks tradicional s/ lactose e s/ glúten 70x12g caixa com 70 unidades 32419 7908716300199">
+<input type="checkbox" id="c12"><label for="c12">
+<span class="num">12</span>
+<span class="txt"><b>Bisc. de Polvilho Unisnacks Tradicional S/ Lactose e S/ Glúten 70x12g Caixa com 70 unidades</b>
+<span class="meta">SKU 32419 · EAN 7908716300199</span>
+<code>Biscoito de Polvilho Unisnacks Tradicional Sem Lactose e Sem Glúten 70x12g Caixa com 70 unidades.jpg</code></span></label></li><li class="item" data-b="biscoito integral unisnacks sabor banana c/ canela e cereais sem açúcar 180x17g caixa com 180 unidades 31824 7898957478804">
+<input type="checkbox" id="c13"><label for="c13">
+<span class="num">13</span>
+<span class="txt"><b>Biscoito Integral Unisnacks Sabor Banana c/ Canela e Cereais Sem Açúcar 180x17g Caixa com 180 unidades</b>
+<span class="meta">SKU 31824 · EAN 7898957478804</span>
+<code>Biscoito Integral Unisnacks Sabor Banana com Canela e Cereais Sem Açúcar 180x17g Caixa com 180 unidades.jpg</code></span></label></li><li class="item" data-b="biscoito integral unisnacks sabor banana c/ canela e cereais sem açúcar 300x8,5g caixa com 300 unidades 31889 7898957478835">
+<input type="checkbox" id="c14"><label for="c14">
+<span class="num">14</span>
+<span class="txt"><b>Biscoito Integral Unisnacks Sabor Banana c/ Canela e Cereais Sem Açúcar 300x8,5g Caixa com 300 unidades</b>
+<span class="meta">SKU 31889 · EAN 7898957478835</span>
+<code>Biscoito Integral Unisnacks Sabor Banana com Canela e Cereais Sem Açúcar 300x8,5g Caixa com 300 unidades.jpg</code></span></label></li><li class="item" data-b="biscoito integral unisnacks sabor cacau e cereais sem açúcar 180x17g caixa com 180 unidades 31812 7898957478798">
+<input type="checkbox" id="c15"><label for="c15">
+<span class="num">15</span>
+<span class="txt"><b>Biscoito Integral Unisnacks Sabor Cacau e Cereais Sem Açúcar 180x17g Caixa com 180 unidades</b>
+<span class="meta">SKU 31812 · EAN 7898957478798</span>
+<code>Biscoito Integral Unisnacks Sabor Cacau e Cereais Sem Açúcar 180x17g Caixa com 180 unidades.jpg</code></span></label></li><li class="item" data-b="biscoito integral unisnacks sabor cacau e cereais sem açúcar 300x8,5g caixa com 300 unidades 31891 7898957478828">
+<input type="checkbox" id="c16"><label for="c16">
+<span class="num">16</span>
+<span class="txt"><b>Biscoito Integral Unisnacks Sabor Cacau e Cereais Sem Açúcar 300x8,5g Caixa com 300 unidades</b>
+<span class="meta">SKU 31891 · EAN 7898957478828</span>
+<code>Biscoito Integral Unisnacks Sabor Cacau e Cereais Sem Açúcar 300x8,5g Caixa com 300 unidades.jpg</code></span></label></li><li class="item" data-b="biscoito integral unisnacks sabor laranja c/ cenoura e cereais sem açúcar 180x17g caixa com 180 unidades 31818 7898957478811">
+<input type="checkbox" id="c17"><label for="c17">
+<span class="num">17</span>
+<span class="txt"><b>Biscoito Integral Unisnacks Sabor Laranja c/ Cenoura e Cereais Sem Açúcar 180x17g Caixa com 180 unidades</b>
+<span class="meta">SKU 31818 · EAN 7898957478811</span>
+<code>Biscoito Integral Unisnacks Sabor Laranja com Cenoura e Cereais Sem Açúcar 180x17g Caixa com 180 unidades.jpg</code></span></label></li><li class="item" data-b="biscoito integral unisnacks sabor laranja c/ cenoura e cereais sem açúcar 300x8,5g caixa com 300 unidades 31893 7898957478842">
+<input type="checkbox" id="c18"><label for="c18">
+<span class="num">18</span>
+<span class="txt"><b>Biscoito Integral Unisnacks Sabor Laranja c/ Cenoura e Cereais Sem Açúcar 300x8,5g Caixa com 300 unidades</b>
+<span class="meta">SKU 31893 · EAN 7898957478842</span>
+<code>Biscoito Integral Unisnacks Sabor Laranja com Cenoura e Cereais Sem Açúcar 300x8,5g Caixa com 300 unidades.jpg</code></span></label></li><li class="item" data-b="bisc. polvilho unisnacks pimenta jalapeño 20x35g caixa com 20 unidades 706 7898957478668">
+<input type="checkbox" id="c19"><label for="c19">
+<span class="num">19</span>
+<span class="txt"><b>Bisc. Polvilho Unisnacks Pimenta Jalapeño 20x35g Caixa com 20 unidades</b>
+<span class="meta">SKU 706 · EAN 7898957478668</span>
+<code>Biscoito Polvilho Unisnacks Pimenta Jalapeño 20x35g Caixa com 20 unidades.jpg</code></span></label></li><li class="item" data-b="bisc. polvilho unisnacks queijo parmesão 20x35g caixa com 20 unidades 31003 7898957478668">
+<input type="checkbox" id="c20"><label for="c20">
+<span class="num">20</span>
+<span class="txt"><b>Bisc. Polvilho Unisnacks Queijo Parmesão 20x35g Caixa com 20 unidades</b>
+<span class="meta">SKU 31003 · EAN 7898957478668</span>
+<code>Biscoito Polvilho Unisnacks Queijo Parmesão 20x35g Caixa com 20 unidades.jpg</code></span></label></li><li class="item" data-b="chips batata doce chips brasil natural 100x10g caixa com 100 unidades 707 7898957478293">
+<input type="checkbox" id="c21"><label for="c21">
+<span class="num">21</span>
+<span class="txt"><b>Chips Batata Doce Chips Brasil Natural 100x10g Caixa com 100 unidades</b>
+<span class="meta">SKU 707 · EAN 7898957478293</span>
+<code>Chips Batata Doce Chips Brasil Natural 100x10g Caixa com 100 unidades.jpg</code></span></label></li><li class="item" data-b="chips brasil batata doce natural 20x35g caixa com 20 unidades 31174 7898957478255">
+<input type="checkbox" id="c22"><label for="c22">
+<span class="num">22</span>
+<span class="txt"><b>Chips Brasil Batata Doce Natural 20x35g Caixa com 20 unidades</b>
+<span class="meta">SKU 31174 · EAN 7898957478255</span>
+<code>Chips Brasil Batata Doce Natural 20x35g Caixa com 20 unidades.jpg</code></span></label></li><li class="item" data-b="chips brasil mandioca natural 20x35g caixa com 20 unidades 31171 7898957478224">
+<input type="checkbox" id="c23"><label for="c23">
+<span class="num">23</span>
+<span class="txt"><b>Chips Brasil Mandioca Natural 20x35g Caixa com 20 unidades</b>
+<span class="meta">SKU 31171 · EAN 7898957478224</span>
+<code>Chips Brasil Mandioca Natural 20x35g Caixa com 20 unidades.jpg</code></span></label></li><li class="item" data-b="chips brasil mandioca salsa/cebola 20x35g caixa com 20 unidades 31173 7898957478248">
+<input type="checkbox" id="c24"><label for="c24">
+<span class="num">24</span>
+<span class="txt"><b>Chips Brasil Mandioca Salsa/Cebola 20x35g Caixa com 20 unidades</b>
+<span class="meta">SKU 31173 · EAN 7898957478248</span>
+<code>Chips Brasil Mandioca Salsa-Cebola 20x35g Caixa com 20 unidades.jpg</code></span></label></li><li class="item" data-b="chips mandioca chips brasil salsa e cebola 100x10g caixa com 100 unidades 706 7898957478286">
+<input type="checkbox" id="c25"><label for="c25">
+<span class="num">25</span>
+<span class="txt"><b>Chips Mandioca Chips Brasil Salsa e Cebola 100x10g Caixa com 100 unidades</b>
+<span class="meta">SKU 706 · EAN 7898957478286</span>
+<code>Chips Mandioca Chips Brasil Salsa e Cebola 100x10g Caixa com 100 unidades.jpg</code></span></label></li><li class="item" data-b="em breve! pipoca corn caramelo &amp; chocolate ao leite 12x80g caixa com 12 unidades 7 751320903266">
+<input type="checkbox" id="c26"><label for="c26">
+<span class="num">26</span>
+<span class="txt"><b>EM BREVE! Pipoca Corn Caramelo &amp; Chocolate Ao leite 12x80g Caixa com 12 unidades</b>
+<span class="meta">SKU 7 · EAN 751320903266</span>
+<code>EM BREVE! Pipoca Corn Caramelo &amp; Chocolate Ao leite 12x80g Caixa com 12 unidades.jpg</code></span></label></li><li class="item" data-b="em breve! pipoca corn caramelo &amp; chocolate branco 12x80g caixa com 12 unidades 14 751320903259">
+<input type="checkbox" id="c27"><label for="c27">
+<span class="num">27</span>
+<span class="txt"><b>EM BREVE! Pipoca Corn Caramelo &amp; Chocolate Branco 12x80g Caixa com 12 unidades</b>
+<span class="meta">SKU 14 · EAN 751320903259</span>
+<code>EM BREVE! Pipoca Corn Caramelo &amp; Chocolate Branco 12x80g Caixa com 12 unidades.jpg</code></span></label></li><li class="item" data-b="em breve! pipoca corn caramelo &amp; coco &amp; chocolate 12x80g caixa com 12 unidades 21 619205714386">
+<input type="checkbox" id="c28"><label for="c28">
+<span class="num">28</span>
+<span class="txt"><b>EM BREVE! Pipoca Corn Caramelo &amp; Coco &amp; Chocolate 12x80g Caixa com 12 unidades</b>
+<span class="meta">SKU 21 · EAN 619205714386</span>
+<code>EM BREVE! Pipoca Corn Caramelo &amp; Coco &amp; Chocolate 12x80g Caixa com 12 unidades.jpg</code></span></label></li><li class="item" data-b="farofa da fazenda uni costelinha com barbecue 12x350g caixa com 12 unidades 31177 7898957478378">
+<input type="checkbox" id="c29"><label for="c29">
+<span class="num">29</span>
+<span class="txt"><b>Farofa da Fazenda Uni Costelinha com Barbecue 12x350g Caixa com 12 unidades</b>
+<span class="meta">SKU 31177 · EAN 7898957478378</span>
+<code>Farofa da Fazenda Unisnacks Costelinha com Barbecue 12x350g Caixa com 12 unidades.jpg</code></span></label></li><li class="item" data-b="farofa da fazenda uni galeto com lemon pepper 12x350g caixa com 12 unidades 31176 7898957478361">
+<input type="checkbox" id="c30"><label for="c30">
+<span class="num">30</span>
+<span class="txt"><b>Farofa da Fazenda Uni Galeto com Lemon Pepper 12x350g Caixa com 12 unidades</b>
+<span class="meta">SKU 31176 · EAN 7898957478361</span>
+<code>Farofa da Fazenda Unisnacks Galeto com Lemon Pepper 12x350g Caixa com 12 unidades.jpg</code></span></label></li><li class="item" data-b="farofa da fazenda uni soja e chimichurri 12x350g caixa com 12 unidades 31178 7898957478385">
+<input type="checkbox" id="c31"><label for="c31">
+<span class="num">31</span>
+<span class="txt"><b>Farofa da Fazenda Uni Soja e Chimichurri 12x350g Caixa com 12 unidades</b>
+<span class="meta">SKU 31178 · EAN 7898957478385</span>
+<code>Farofa da Fazenda Unisnacks Soja e Chimichurri 12x350g Caixa com 12 unidades.jpg</code></span></label></li><li class="item" data-b="farofa da fazenda uni tradicional com cebola 12x350g caixa com 12 unidades 31175 7898957478354">
+<input type="checkbox" id="c32"><label for="c32">
+<span class="num">32</span>
+<span class="txt"><b>Farofa da Fazenda Uni Tradicional com Cebola 12x350g Caixa com 12 unidades</b>
+<span class="meta">SKU 31175 · EAN 7898957478354</span>
+<code>Farofa da Fazenda Unisnacks Tradicional com Cebola 12x350g Caixa com 12 unidades.jpg</code></span></label></li><li class="item" data-b="meu bolinho unisnacks sabor chocolate 60x30g caixa com 60 unidades 32374 7908716300137">
+<input type="checkbox" id="c33"><label for="c33">
+<span class="num">33</span>
+<span class="txt"><b>Meu Bolinho Unisnacks Sabor Chocolate 60x30g Caixa com 60 unidades</b>
+<span class="meta">SKU 32374 · EAN 7908716300137</span>
+<code>Meu Bolinho Unisnacks Sabor Chocolate 60x30g Caixa com 60 unidades.jpg</code></span></label></li><li class="item" data-b="meu bolinho unisnacks sabor laranja 60x30g caixa com 60 unidades 32293 7908716300076">
+<input type="checkbox" id="c34"><label for="c34">
+<span class="num">34</span>
+<span class="txt"><b>Meu Bolinho Unisnacks Sabor Laranja 60x30g Caixa com 60 unidades</b>
+<span class="meta">SKU 32293 · EAN 7908716300076</span>
+<code>Meu Bolinho Unisnacks Sabor Laranja 60x30g Caixa com 60 unidades.jpg</code></span></label></li><li class="item" data-b="minha tortinha unisnacks sabor chocolate 200x15g caixa com 200 unidades 32190 7908716300045">
+<input type="checkbox" id="c35"><label for="c35">
+<span class="num">35</span>
+<span class="txt"><b>Minha Tortinha Unisnacks Sabor Chocolate 200x15g Caixa com 200 unidades</b>
+<span class="meta">SKU 32190 · EAN 7908716300045</span>
+<code>Minha Tortinha Unisnacks Sabor Chocolate 200x15g Caixa com 200 unidades.jpg</code></span></label></li><li class="item" data-b="minha tortinha unisnacks sabor limão 200x15g caixa com 200 unidades 32189 7908716300038">
+<input type="checkbox" id="c36"><label for="c36">
+<span class="num">36</span>
+<span class="txt"><b>Minha Tortinha Unisnacks Sabor Limão 200x15g Caixa com 200 unidades</b>
+<span class="meta">SKU 32189 · EAN 7908716300038</span>
+<code>Minha Tortinha Unisnacks Sabor Limão 200x15g Caixa com 200 unidades.jpg</code></span></label></li><li class="item" data-b="mix castanhas unisnacks (cast cajú, cast pará e amêndoa) 100x25g caixa com 100 unidades 14 7908716300243">
+<input type="checkbox" id="c37"><label for="c37">
+<span class="num">37</span>
+<span class="txt"><b>Mix Castanhas Unisnacks (Cast Cajú, Cast Pará e Amêndoa) 100x25g Caixa com 100 unidades</b>
+<span class="meta">SKU 14 · EAN 7908716300243</span>
+<code>Mix Castanhas Unisnacks (Cast Cajú, Cast Pará e Amêndoa) 100x25g Caixa com 100 unidades.jpg</code></span></label></li><li class="item" data-b="mix nuts unisnacks (cast pará, cast caju, amendoim, amêndoa e uva passa) 250x15g caixa com 250 unidades 31113 7898957478415">
+<input type="checkbox" id="c38"><label for="c38">
+<span class="num">38</span>
+<span class="txt"><b>Mix Nuts Unisnacks (Cast Pará, Cast Caju, Amendoim, Amêndoa e Uva Passa) 250x15g Caixa com 250 unidades</b>
+<span class="meta">SKU 31113 · EAN 7898957478415</span>
+<code>Mix Nuts Unisnacks (Cast Pará, Cast Caju, Amendoim, Amêndoa e Uva Passa) 250x15g Caixa com 250 unidades.jpg</code></span></label></li><li class="item" data-b="mix tropical unisnacks (amendoim, uva passa e coco em lasca) 200x15g caixa com 200 unidades 32409 7908716300182">
+<input type="checkbox" id="c39"><label for="c39">
+<span class="num">39</span>
+<span class="txt"><b>Mix Tropical Unisnacks (Amendoim, Uva Passa e Coco em Lasca) 200x15g Caixa com 200 unidades</b>
+<span class="meta">SKU 32409 · EAN 7908716300182</span>
+<code>Mix Tropical Unisnacks (Amendoim, Uva Passa e Coco em Lasca) 200x15g Caixa com 200 unidades.jpg</code></span></label></li><li class="item" data-b="najus 100% suco misto laranja, maçã e acerola zero adição de açúcar 27x200ml caixa com 27 unidades 31800 7898957478750">
+<input type="checkbox" id="c40"><label for="c40">
+<span class="num">40</span>
+<span class="txt"><b>Najus 100% Suco Misto Laranja, Maçã e Acerola Zero Adição de Açúcar 27x200ml Caixa com 27 unidades</b>
+<span class="meta">SKU 31800 · EAN 7898957478750</span>
+<code>Najus 100% Suco Misto Laranja, Maçã e Acerola Zero Adição de Açúcar 27x200ml Caixa com 27 unidades.jpg</code></span></label></li><li class="item" data-b="najus néctar abacaxi c/ hortelã zero adição de açúcar 27x200ml caixa com 27 unidades 31797 7898957478743">
+<input type="checkbox" id="c41"><label for="c41">
+<span class="num">41</span>
+<span class="txt"><b>Najus Néctar Abacaxi c/ Hortelã Zero Adição de Açúcar 27x200ml Caixa com 27 unidades</b>
+<span class="meta">SKU 31797 · EAN 7898957478743</span>
+<code>Najus Néctar Abacaxi com Hortelã Zero Adição de Açúcar 27x200ml Caixa com 27 unidades.jpg</code></span></label></li><li class="item" data-b="najus néctar açaí com banana zero adição de açúcar 27x200ml caixa com 27 unidades 31798 7908716300007">
+<input type="checkbox" id="c42"><label for="c42">
+<span class="num">42</span>
+<span class="txt"><b>Najus Néctar Açaí com Banana Zero Adição de Açúcar 27x200ml Caixa com 27 unidades</b>
+<span class="meta">SKU 31798 · EAN 7908716300007</span>
+<code>Najus Néctar Açaí com Banana Zero Adição de Açúcar 27x200ml Caixa com 27 unidades.jpg</code></span></label></li><li class="item" data-b="najus néctar cajú zero adição de açúcar 27x200ml caixa com 27 unidades 32286 7908716300052">
+<input type="checkbox" id="c43"><label for="c43">
+<span class="num">43</span>
+<span class="txt"><b>Najus Néctar Cajú Zero Adição de Açúcar 27x200ml Caixa com 27 unidades</b>
+<span class="meta">SKU 32286 · EAN 7908716300052</span>
+<code>Najus Néctar Cajú Zero Adição de Açúcar 27x200ml Caixa com 27 unidades.jpg</code></span></label></li><li class="item" data-b="najus néctar goiaba zero adição de açúcar 27x200ml caixa com 27 unidades 31796 7898957478736">
+<input type="checkbox" id="c44"><label for="c44">
+<span class="num">44</span>
+<span class="txt"><b>Najus Néctar Goiaba Zero Adição de Açúcar 27x200ml Caixa com 27 unidades</b>
+<span class="meta">SKU 31796 · EAN 7898957478736</span>
+<code>Najus Néctar Goiaba Zero Adição de Açúcar 27x200ml Caixa com 27 unidades.jpg</code></span></label></li><li class="item" data-b="najus néctar laranja zero adição de açúcar 27x200ml caixa com 27 unidades 31794 7898957478712">
+<input type="checkbox" id="c45"><label for="c45">
+<span class="num">45</span>
+<span class="txt"><b>Najus Néctar Laranja Zero Adição de Açúcar 27x200ml Caixa com 27 unidades</b>
+<span class="meta">SKU 31794 · EAN 7898957478712</span>
+<code>Najus Néctar Laranja Zero Adição de Açúcar 27x200ml Caixa com 27 unidades.jpg</code></span></label></li><li class="item" data-b="najus néctar limão zero adição de açúcar 27x200ml caixa com 27 unidades 32454 7908716300205">
+<input type="checkbox" id="c46"><label for="c46">
+<span class="num">46</span>
+<span class="txt"><b>Najus Néctar Limão Zero Adição de Açúcar 27x200ml Caixa com 27 unidades</b>
+<span class="meta">SKU 32454 · EAN 7908716300205</span>
+<code>Najus Néctar Limão Zero Adição de Açúcar 27x200ml Caixa com 27 unidades.jpg</code></span></label></li><li class="item" data-b="najus néctar manga zero adição de açúcar 27x200ml caixa com 27 unidades 32288 7908716300069">
+<input type="checkbox" id="c47"><label for="c47">
+<span class="num">47</span>
+<span class="txt"><b>Najus Néctar Manga Zero Adição de Açúcar 27x200ml Caixa com 27 unidades</b>
+<span class="meta">SKU 32288 · EAN 7908716300069</span>
+<code>Najus Néctar Manga Zero Adição de Açúcar 27x200ml Caixa com 27 unidades.jpg</code></span></label></li><li class="item" data-b="najus néctar tangerina zero adição de açúcar 27x200ml caixa com 27 unidades 32456 7908716300212">
+<input type="checkbox" id="c48"><label for="c48">
+<span class="num">48</span>
+<span class="txt"><b>Najus Néctar Tangerina Zero Adição de Açúcar 27x200ml Caixa com 27 unidades</b>
+<span class="meta">SKU 32456 · EAN 7908716300212</span>
+<code>Najus Néctar Tangerina Zero Adição de Açúcar 27x200ml Caixa com 27 unidades.jpg</code></span></label></li><li class="item" data-b="najus néctar uva zero adição de açúcar 27x200ml caixa com 27 unidades 31795 7898957478729">
+<input type="checkbox" id="c49"><label for="c49">
+<span class="num">49</span>
+<span class="txt"><b>Najus Néctar Uva Zero Adição de Açúcar 27x200ml Caixa com 27 unidades</b>
+<span class="meta">SKU 31795 · EAN 7898957478729</span>
+<code>Najus Néctar Uva Zero Adição de Açúcar 27x200ml Caixa com 27 unidades.jpg</code></span></label></li><li class="item" data-b="nuts amendoim torrado com sal 24x50g caixa com 24 unidades 620 7898957478620">
+<input type="checkbox" id="c50"><label for="c50">
+<span class="num">50</span>
+<span class="txt"><b>Nuts Amendoim Torrado com Sal 24x50g Caixa com 24 unidades</b>
+<span class="meta">SKU 620 · EAN 7898957478620</span>
+<code>Nuts Amendoim Torrado com Sal 24x50g Caixa com 24 unidades.jpg</code></span></label></li><li class="item" data-b="nuts castanha de caju 24x50g caixa com 24 unidades 31490 7898957478583">
+<input type="checkbox" id="c51"><label for="c51">
+<span class="num">51</span>
+<span class="txt"><b>Nuts Castanha de Caju 24x50g Caixa com 24 unidades</b>
+<span class="meta">SKU 31490 · EAN 7898957478583</span>
+<code>Nuts Castanha de Caju 24x50g Caixa com 24 unidades.jpg</code></span></label></li><li class="item" data-b="nuts castanha do pará 24x50g caixa com 24 unidades 31491 7898957478590">
+<input type="checkbox" id="c52"><label for="c52">
+<span class="num">52</span>
+<span class="txt"><b>Nuts Castanha do Pará 24x50g Caixa com 24 unidades</b>
+<span class="meta">SKU 31491 · EAN 7898957478590</span>
+<code>Nuts Castanha do Pará 24x50g Caixa com 24 unidades.jpg</code></span></label></li><li class="item" data-b="nuts mix de nuts 24x50g caixa com 24 unidades 525 7898957478606">
+<input type="checkbox" id="c53"><label for="c53">
+<span class="num">53</span>
+<span class="txt"><b>Nuts Mix de Nuts 24x50g Caixa com 24 unidades</b>
+<span class="meta">SKU 525 · EAN 7898957478606</span>
+<code>Nuts Mix de Nuts 24x50g Caixa com 24 unidades.jpg</code></span></label></li><li class="item" data-b="pipoca doce caramelizada cacau com coco 20x35g caixa com 20 unidades 31164 7898957478477">
+<input type="checkbox" id="c54"><label for="c54">
+<span class="num">54</span>
+<span class="txt"><b>Pipoca Doce Caramelizada Cacau com Coco 20x35g Caixa com 20 unidades</b>
+<span class="meta">SKU 31164 · EAN 7898957478477</span>
+<code>Pipoca Doce Caramelizada Cacau com Coco 20x35g Caixa com 20 unidades.jpg</code></span></label></li><li class="item" data-b="pipoca doce unisnacks cacau com coco s/ glúten s/ lactose vegano 100x12g caixa com 100 unidades 31124 7898957478453">
+<input type="checkbox" id="c55"><label for="c55">
+<span class="num">55</span>
+<span class="txt"><b>Pipoca Doce Unisnacks Cacau com Coco S/ Glúten S/ Lactose Vegano 100x12g Caixa com 100 unidades</b>
+<span class="meta">SKU 31124 · EAN 7898957478453</span>
+<code>Pipoca Doce Unisnacks Cacau com Coco Sem Glúten Sem Lactose Vegano 100x12g Caixa com 100 unidades.jpg</code></span></label></li><li class="item" data-b="pipoca duo caramelo e salgada 20x35g caixa com 20 unidades 31178 7898957478484">
+<input type="checkbox" id="c56"><label for="c56">
+<span class="num">56</span>
+<span class="txt"><b>Pipoca Duo Caramelo e Salgada 20x35g Caixa com 20 unidades</b>
+<span class="meta">SKU 31178 · EAN 7898957478484</span>
+<code>Pipoca Duo Caramelo e Salgada 20x35g Caixa com 20 unidades.jpg</code></span></label></li><li class="item" data-b="pipoca duo caramelo e salgada unisnacks 60x12g caixa com 60 unidades 32573 7908716300274">
+<input type="checkbox" id="c57"><label for="c57">
+<span class="num">57</span>
+<span class="txt"><b>Pipoca Duo Caramelo e Salgada Unisnacks 60x12g Caixa com 60 unidades</b>
+<span class="meta">SKU 32573 · EAN 7908716300274</span>
+<code>Pipoca Duo Caramelo e Salgada Unisnacks 60x12g Caixa com 60 unidades.jpg</code></span></label></li><li class="item" data-b="pipoca salgada natural 20x20g caixa com 20 unidades 32738 7908716300311">
+<input type="checkbox" id="c58"><label for="c58">
+<span class="num">58</span>
+<span class="txt"><b>Pipoca Salgada Natural 20x20g Caixa com 20 unidades</b>
+<span class="meta">SKU 32738 · EAN 7908716300311</span>
+<code>Pipoca Salgada Natural 20x20g Caixa com 20 unidades.jpg</code></span></label></li><li class="item" data-b="pipoca salgada unisnacks tradicional 60x10g caixa com 60 unidades 31483 7898957478576">
+<input type="checkbox" id="c59"><label for="c59">
+<span class="num">59</span>
+<span class="txt"><b>Pipoca Salgada Unisnacks Tradicional 60x10g Caixa com 60 unidades</b>
+<span class="meta">SKU 31483 · EAN 7898957478576</span>
+<code>Pipoca Salgada Unisnacks Tradicional 60x10g Caixa com 60 unidades.jpg</code></span></label></li><li class="item" data-b="strom energético funcional zero açúcar sabor manga 6x269ml caixa com 6 unidades 32738 7908716300380">
+<input type="checkbox" id="c60"><label for="c60">
+<span class="num">60</span>
+<span class="txt"><b>STROM energético funcional zero açúcar sabor manga 6x269ml Caixa com 6 unidades</b>
+<span class="meta">SKU 32738 · EAN 7908716300380</span>
+<code>STROM energético funcional zero açúcar sabor manga 6x269ml Caixa com 6 unidades.jpg</code></span></label></li><li class="item" data-b="strom energético funcional zero açúcar sabor tradicional 6x269ml caixa com 6 unidades 32737 7908716300373">
+<input type="checkbox" id="c61"><label for="c61">
+<span class="num">61</span>
+<span class="txt"><b>STROM energético funcional zero açúcar sabor tradicional 6x269ml Caixa com 6 unidades</b>
+<span class="meta">SKU 32737 · EAN 7908716300373</span>
+<code>STROM energético funcional zero açúcar sabor tradicional 6x269ml Caixa com 6 unidades.jpg</code></span></label></li><li class="item" data-b="tapioca uni tradicional 16 dsp x 5un x 85g caixa com 16 unidades 525 7898957478170">
+<input type="checkbox" id="c62"><label for="c62">
+<span class="num">62</span>
+<span class="txt"><b>Tapioca Uni Tradicional 16 DSP x 5un x 85g Caixa com 16 unidades</b>
+<span class="meta">SKU 525 · EAN 7898957478170</span>
+<code>Tapioca Unisnacks Tradicional 16 displays x 5un x 85g Caixa com 16 unidades.jpg</code></span></label></li><li class="item" data-b="tapioca uni tradicional pouch 12x500g caixa com 12 unidades 31170 7898957478019">
+<input type="checkbox" id="c63"><label for="c63">
+<span class="num">63</span>
+<span class="txt"><b>Tapioca Uni Tradicional Pouch 12x500g Caixa com 12 unidades</b>
+<span class="meta">SKU 31170 · EAN 7898957478019</span>
+<code>Tapioca Unisnacks Tradicional Pouch 12x500g Caixa com 12 unidades.jpg</code></span></label></li><li class="item" data-b="tortilhas unisnacks sabor queijo nacho 100x12g caixa com 100 unidades 32354 7908716300168">
+<input type="checkbox" id="c64"><label for="c64">
+<span class="num">64</span>
+<span class="txt"><b>Tortilhas Unisnacks Sabor Queijo Nacho 100x12g Caixa com 100 unidades</b>
+<span class="meta">SKU 32354 · EAN 7908716300168</span>
+<code>Tortilhas Unisnacks Sabor Queijo Nacho 100x12g Caixa com 100 unidades.jpg</code></span></label></li><li class="item" data-b="tortilhas unisnacks sabor queijo nacho 20x35g caixa com 20 unidades 32454 7908716300175">
+<input type="checkbox" id="c65"><label for="c65">
+<span class="num">65</span>
+<span class="txt"><b>Tortilhas Unisnacks Sabor Queijo Nacho 20x35g Caixa com 20 unidades</b>
+<span class="meta">SKU 32454 · EAN 7908716300175</span>
+<code>Tortilhas Unisnacks Sabor Queijo Nacho 20x35g Caixa com 20 unidades.jpg</code></span></label></li><li class="item" data-b="yapp! refrigerante limonada suíça com coco zero açúcar c/fibras 6x269ml caixa com 6 unidades 32735 7908716300366">
+<input type="checkbox" id="c66"><label for="c66">
+<span class="num">66</span>
+<span class="txt"><b>YAPP! Refrigerante limonada suíça com coco zero açúcar c/fibras 6x269ml Caixa com 6 unidades</b>
+<span class="meta">SKU 32735 · EAN 7908716300366</span>
+<code>YAPP! Refrigerante limonada suíça com coco zero açúcar com fibras 6x269ml Caixa com 6 unidades.jpg</code></span></label></li><li class="item" data-b="yapp! refrigerante manga com maracujá zero açúcar c/fibras 6x269ml caixa com 6 unidades 32734 7908716300342">
+<input type="checkbox" id="c67"><label for="c67">
+<span class="num">67</span>
+<span class="txt"><b>YAPP! Refrigerante manga com maracujá zero açúcar c/fibras 6x269ml Caixa com 6 unidades</b>
+<span class="meta">SKU 32734 · EAN 7908716300342</span>
+<code>YAPP! Refrigerante manga com maracujá zero açúcar com fibras 6x269ml Caixa com 6 unidades.jpg</code></span></label></li><li class="item" data-b="yapp! refrigerante melancia com limão zero açúcar c/fibras 6x269ml caixa com 6 unidades 32736 7908716300359">
+<input type="checkbox" id="c68"><label for="c68">
+<span class="num">68</span>
+<span class="txt"><b>YAPP! Refrigerante Melancia com Limão zero açúcar c/fibras 6x269ml Caixa com 6 unidades</b>
+<span class="meta">SKU 32736 · EAN 7908716300359</span>
+<code>YAPP! Refrigerante Melancia com Limão zero açúcar com fibras 6x269ml Caixa com 6 unidades.jpg</code></span></label></li></ul>
+<h2>Sem foto de caixa (9) — falta a foto do pacote</h2>
+<ul class="falta"><li><b>Amendoim Doce Unisnacks Praliné 250x15g Caixa com 250 unidades</b><span class='meta'>SKU 31705</span></li><li><b>Bisc. Aerolitos Unisnacks Coco S/Açúcar S/Glúten S/Lactose Vegano 100x15g Caixa com 100 unidades</b><span class='meta'>SKU 32101</span></li><li><b>Chips de Banana Unisnacks 100x15g Caixa com 100 unidades</b><span class='meta'>SKU 31003</span></li><li><b>Meu Biscoito Salgado Unisnacks Original Sachê c/ 2 Unid 150x10g Caixa com 150 unidades</b><span class='meta'>SKU 32097</span></li><li><b>Meu Biscoito Salgado Unisnacks Original Sachê c/ 4 Unid 120x20g Caixa com 120 unidades</b><span class='meta'>SKU 32098</span></li><li><b>Pipoca Doce Unisnacks Caramelo Diet S/ Glúten S/ Lactose Vegano 100x12g Caixa com 100 unidades</b><span class='meta'>SKU 31123</span></li><li><b>Pipoca Salgada Unisnacks Limão com Ervas Finas 60x10g Caixa com 60 unidades</b><span class='meta'>SKU 31484</span></li><li><b>Pipoca Salgada Unisnacks Tomate Seco e Pimenta Jalapeño 60x10g Caixa com 60 unidades</b><span class='meta'>SKU 31485</span></li><li><b>Torrada Unisnacks Tradicional 100x15g Caixa com 100 unidades</b><span class='meta'>SKU 31793</span></li></ul>
+</div><script>
+const K='jupiter-caixas-v1', L=document.getElementById('lista'), P=document.getElementById('p');
+let st={}; try{st=JSON.parse(localStorage.getItem(K)||'{}')}catch(e){}
+const cbs=[...L.querySelectorAll('input')];
+cbs.forEach(c=>{ if(st[c.id]) c.checked=true; c.addEventListener('change',()=>{ st[c.id]=c.checked; try{localStorage.setItem(K,JSON.stringify(st))}catch(e){} cont(); }); });
+function cont(){ P.textContent = cbs.filter(c=>c.checked).length + ' de ' + cbs.length + ' enviadas'; }
+document.getElementById('q').addEventListener('input',e=>{
+  const v=e.target.value.toLowerCase().trim();
+  L.querySelectorAll('.item').forEach(li=>li.classList.toggle('hide', v && !li.dataset.b.includes(v)));
+});
+cont();
+</script></body></html>
