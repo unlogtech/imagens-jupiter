@@ -1,0 +1,68 @@
+{
+ "S": 2,
+ "W": 1200,
+ "frentes": {
+  "353585054": {
+   "slug": "chips-de-banana-unisnacks-15g",
+   "x": 769,
+   "y": 828
+  },
+  "353585059": {
+   "slug": "pipoca-salgada-unisnacks-limao-com-ervas-finas-10g",
+   "x": 769,
+   "y": 828
+  },
+  "353585060": {
+   "slug": "pipoca-salgada-unisnacks-tomate-seco-e-pimenta-jalapeno-10g",
+   "x": 769,
+   "y": 828
+  },
+  "353585064": {
+   "slug": "amendoim-doce-unisnacks-praline-15g",
+   "x": 769,
+   "y": 828
+  },
+  "353585077": {
+   "slug": "torrada-unisnacks-tradicional-15g",
+   "x": 769,
+   "y": 828
+  },
+  "teste": {
+   "slug": "pipoca-salgada-unisnacks-tradicional-10g",
+   "x": 769,
+   "y": 828
+  }
+ },
+ "canvas": [
+  2400,
+  2400
+ ],
+ "centro": [
+  1363.8,
+  944.5
+ ],
+ "cabe": [
+  520,
+  690
+ ],
+ "copias": [
+  [
+   -105,
+   -60,
+   -13,
+   0.92
+  ],
+  [
+   10,
+   -96,
+   4,
+   1.0
+  ],
+  [
+   118,
+   -52,
+   15,
+   0.9
+  ]
+ ]
+}
